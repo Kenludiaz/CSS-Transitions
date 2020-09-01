@@ -1,19 +1,32 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 .white .nav-list .nav-item .nav-link {
   display: block;
-  -webkit-transition: font-size 200ms ease-in-out, -webkit-transform 100ms ease-in;
-  transition: font-size 200ms ease-in-out, -webkit-transform 100ms ease-in;
-  transition: font-size 200ms ease-in-out, transform 100ms ease-in;
-  transition: font-size 200ms ease-in-out, transform 100ms ease-in, -webkit-transform 100ms ease-in;
+  -webkit-transition: outline, font-size 200ms ease-in-out, -webkit-transform 100ms ease-in;
+  transition: outline, font-size 200ms ease-in-out, -webkit-transform 100ms ease-in;
+  transition: outline, font-size 200ms ease-in-out, transform 100ms ease-in;
+  transition: outline, font-size 200ms ease-in-out, transform 100ms ease-in, -webkit-transform 100ms ease-in;
 }
 
 .white .nav-list .nav-item .nav-link:hover {
-  font-size: 3rem;
-  -webkit-transform: translate(0, -10px);
-          transform: translate(0, -10px);
+  font-size: 2.2rem;
+  outline: #333 outset 4px;
+  outline-offset: 40px;
+  -webkit-transform: translate(40%, -10px);
+          transform: translate(40%, -10px);
 }
 
 .blue {
   background-color: blue;
+}
+
+.blue .nav-list {
+  z-index: -19;
 }
 
 .blue .nav-list .nav-item .nav-link {
@@ -25,8 +38,8 @@
 }
 
 .blue .nav-list .nav-item .nav-link:hover {
-  -webkit-transform: rotateY(90deg);
-          transform: rotateY(90deg);
+  -webkit-transform: translateZ(100px);
+          transform: translateZ(100px);
 }
 
 .red {
@@ -57,10 +70,9 @@
 }
 
 .nav-bar .nav-list .nav-item {
-  margin-right: 1rem;
+  margin-left: 1rem;
   list-style-type: none;
   padding: 0;
-  text-indent: 1rem;
   display: inline-block;
 }
 

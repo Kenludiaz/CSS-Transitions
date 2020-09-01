@@ -1,12 +1,22 @@
+// ============ROOT===========
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+}
+// ============Transitions===========
 .white {
     .nav-list {
         .nav-item {
             .nav-link {
                 display: block;
-                transition: font-size 200ms ease-in-out, transform 100ms ease-in;
+                transition: outline, font-size 200ms ease-in-out, transform 100ms ease-in;
                 &:hover {
-                    font-size: 3rem;
-                    transform: translate(0,-10px);
+                    font-size: 2.2rem;
+                    outline: #333 outset 4px;
+                    outline-offset: 40px;
+                    transform: translate(40%,-10px);
                 }
             }
         }
@@ -17,12 +27,14 @@
 .blue {
     background-color: blue;
     .nav-list {
+        z-index: -19;
         .nav-item {
             .nav-link {
+                
                 display: block;
                 transition: transform 400ms 100ms ease-in-out;
                 &:hover {
-                    transform: rotateY(90deg);
+                    transform: translateZ(100px);
                 }
             }
         }
@@ -52,10 +64,9 @@
         z-index: 999;
         padding-bottom: .33rem;
         .nav-item {
-            margin-right: 1rem;
+            margin-left: 1rem;
             list-style-type: none;
             padding: 0;
-            text-indent: 1rem;
             display: inline-block;
             .nav-link {
                 text-decoration: none;
