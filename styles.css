@@ -42,6 +42,25 @@
   background-color: red;
 }
 
+.red .nav-list {
+  display: inline-block;
+}
+
+.red .nav-list .nav-item .nav-link {
+  -webkit-transition: -webkit-transform 400ms transform 200ms ease-in;
+  transition: -webkit-transform 400ms transform 200ms ease-in;
+  transition: transform 400ms transform 200ms ease-in;
+  transition: transform 400ms transform 200ms ease-in, -webkit-transform 400ms transform 200ms ease-in;
+  -webkit-transform: scale(1, 1.35);
+          transform: scale(1, 1.35);
+}
+
+.red .nav-list .nav-item .nav-link:hover {
+  display: block;
+  -webkit-transform: scale(1, 1.75) rotate(30deg);
+          transform: scale(1, 1.75) rotate(30deg);
+}
+
 .purple {
   background-color: purple;
 }

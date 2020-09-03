@@ -48,7 +48,22 @@
 
 .red {
     background-color: red;
-    
+    .nav-list {
+        display: inline-block;
+        .nav-item {
+            .nav-link {
+                transition: transform 400ms transform 200ms ease-in;
+                transform: scale(1,1.35);
+                &:hover {
+                display: block;
+                transform: scale(1, 1.75) rotate(30deg);
+                    // transform-origin: top;
+                }
+            }
+            
+        }
+        
+    }
 }
 .purple {
     background-color: purple;
