@@ -30,16 +30,15 @@
 }
 
 .blue .nav-list .nav-item .nav-link {
+  -webkit-perspective: 3000px;
+          perspective: 3000px;
   display: block;
-  -webkit-transition: -webkit-transform 400ms 100ms ease-in-out;
-  transition: -webkit-transform 400ms 100ms ease-in-out;
-  transition: transform 400ms 100ms ease-in-out;
-  transition: transform 400ms 100ms ease-in-out, -webkit-transform 400ms 100ms ease-in-out;
+  -webkit-transition: opacity;
+  transition: opacity;
 }
 
 .blue .nav-list .nav-item .nav-link:hover {
-  -webkit-transform: translateZ(100px);
-          transform: translateZ(100px);
+  opacity: 7;
 }
 
 .red {

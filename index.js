@@ -1,9 +1,11 @@
-var elements = document.getElementsByClassName("nav-item");
+var elements = document.querySelector(".blue .nav-list");
 
 var myFunction = function() {
-    alert("Hello");
+    this.style.opacity = ".6";
 };
+let myOtherFunction = function() {
+    this.style.opacity = "1";
+}
 
-Array.from(elements).forEach(function(element) {
-    element.addEventListener('click', myFunction);
-  });
+elements.addEventListener("mouseover", myFunction, false);
+elements.addEventListener("mouseout", myOtherFunction, false);

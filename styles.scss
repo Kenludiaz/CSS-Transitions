@@ -28,17 +28,19 @@
     background-color: blue;
     .nav-list {
         z-index: -19;
+        display: inline-block;
         .nav-item {
             .nav-link {
-                
+                perspective: 3000px;
                 display: block;
-                transition: transform 400ms 100ms ease-in-out;
                 &:hover {
-                    transform: translateZ(100px);
+                    color: $white;
                 }
             }
         }
     }
+    
+    
 }
 .red {
     background-color: red;
@@ -60,7 +62,6 @@
     }
     .nav-list {
         margin-top: 10px;
-        width: 100%;
         z-index: 999;
         padding-bottom: .33rem;
         .nav-item {
@@ -73,9 +74,6 @@
                 color: #DDD;
                 text-transform: none;
                 font-size: 1.77rem;
-                &:hover {
-                   opacity: .6;
-                }
                
             }
         }
