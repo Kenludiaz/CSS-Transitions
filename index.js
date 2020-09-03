@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // var elements = document.querySelector(".blue .nav-list");
 
 // var myFunction = function() {
@@ -9,3 +10,8 @@
 
 // elements.addEventListener("mouseover", myFunction, false);
 // elements.addEventListener("mouseout", myOtherFunction, false);
+=======
+function gatherAll(this) {
+    console.log(this);
+}
+>>>>>>> parent of c4c8217... Playing with JS
