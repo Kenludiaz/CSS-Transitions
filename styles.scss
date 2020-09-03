@@ -29,12 +29,18 @@
     .nav-list {
         z-index: -19;
         display: inline-block;
+        &:hover {
+            opacity: 0.6;
+        }
         .nav-item {
+            
             .nav-link {
                 perspective: 3000px;
                 display: block;
                 &:hover {
+                    opacity: 1;
                     color: $white;
+
                 }
             }
         }
