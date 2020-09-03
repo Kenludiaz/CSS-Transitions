@@ -14,6 +14,7 @@
                 transition: outline, font-size 200ms ease-in-out, transform 100ms ease-in;
                 &:hover {
                     font-size: 2.2rem;
+                    color: purple;
                     outline: #333 outset 4px;
                     outline-offset: 40px;
                     transform: translate(40%,-10px);
@@ -27,29 +28,27 @@
 .blue {
     background-color: blue;
     .nav-list {
-        z-index: -19;
         display: inline-block;
         &:hover {
-            opacity: 0.6;
-        }
-        .nav-item {
-            
-            .nav-link {
-                perspective: 3000px;
-                display: block;
-                &:hover {
-                    opacity: 1;
-                    color: $white;
-
+            .nav-item {
+                .nav-link {
+                    color: rgba(1,1,1,0.6);
+                    &:hover {
+                        color: rgba(1,1,1,1);
+                    }
                 }
+                
             }
         }
     }
-    
-    
 }
+        
+    
+    
+
 .red {
     background-color: red;
+    
 }
 .purple {
     background-color: purple;

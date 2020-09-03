@@ -15,6 +15,7 @@
 
 .white .nav-list .nav-item .nav-link:hover {
   font-size: 2.2rem;
+  color: purple;
   outline: #333 outset 4px;
   outline-offset: 40px;
   -webkit-transform: translate(40%, -10px);
@@ -26,19 +27,15 @@
 }
 
 .blue .nav-list {
-  z-index: -19;
+  display: inline-block;
 }
 
-.blue .nav-list .nav-item .nav-link {
-  -webkit-perspective: 3000px;
-          perspective: 3000px;
-  display: block;
-  -webkit-transition: opacity;
-  transition: opacity;
+.blue .nav-list:hover .nav-item .nav-link {
+  color: rgba(1, 1, 1, 0.6);
 }
 
-.blue .nav-list .nav-item .nav-link:hover {
-  opacity: 7;
+.blue .nav-list:hover .nav-item .nav-link:hover {
+  color: #010101;
 }
 
 .red {
@@ -63,7 +60,6 @@
 
 .nav-bar .nav-list {
   margin-top: 10px;
-  width: 100%;
   z-index: 999;
   padding-bottom: .33rem;
 }
@@ -80,9 +76,5 @@
   color: #DDD;
   text-transform: none;
   font-size: 1.77rem;
-}
-
-.nav-bar .nav-list .nav-item .nav-link:hover {
-  opacity: .6;
 }
 /*# sourceMappingURL=styles.css.map */
