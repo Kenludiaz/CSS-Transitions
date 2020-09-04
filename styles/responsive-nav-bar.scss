@@ -1,0 +1,92 @@
+/* DESCRIPTION:
+This is a hamburger nav bar
+Requires javascript to toggle classes for dropdown
+menu
+
+let navButton = document.getElementsByClassName("nav-button");
+let toggle = false;
+let navList = document.getElementsByClassName("nav-list");
+const displayDropdown = () => {
+    navList[0].classList.toggle("nav-list-toggled");
+}
+navButton.addEventListener("click", displayDropdown, false)
+*/
+$burger-color: #333;
+$nav-color: #FFF;
+$font-color: #333;
+
+@mixin logo-text {
+    font-family: cursive;
+    color: $font-color;
+}
+
+@mixin nav-text {
+    font-family: sans-serif;
+    color: $font-color;
+}
+
+@mixin nav-button {
+    height: 3px;
+    width: 32px;
+    border-radius: 10px;
+    background-color: $burger-color;
+}
+
+.nav-bar {
+    background-color: $nav-color;
+    padding-bottom: 1rem;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    .nav-logo {
+        @include logo-text();
+        text-align: center;
+        font-size: 2.37rem;
+    }
+    .nav-button {
+        @include nav-button;
+        display: block;
+        position: absolute;
+        left: 10px;
+        top: 15px;
+        background-color: $burger-color;
+        cursor: pointer;
+        &::after,
+        &::before {
+            @include nav-button;
+            content: " ";
+            display: block;
+            margin: 7px 0;
+        }
+        &::before {
+            margin-top: 9px; 
+        }
+    }
+    .nav-list {
+        margin-top: 10px;
+        display: none;
+        width: 100%;
+        background-color: $nav-color;
+        z-index: 999;
+        padding-bottom: .33rem;
+        .nav-item {
+            margin-right: 1rem;
+            list-style-type: none;
+            padding: 0;
+            text-indent: 1rem;
+            .nav-link {
+                @include nav-text();
+                text-decoration: none;
+                text-transform: none;
+                font-size: 1.77rem;
+                &:hover {
+                   opacity: .6;
+                }
+               
+            }
+        }
+    }
+    .nav-list-toggled {
+        display: block;
+    }
+}

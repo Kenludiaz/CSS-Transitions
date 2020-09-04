@@ -1,0 +1,86 @@
+/* DESCRIPTION:
+This is a hamburger nav bar
+Requires javascript to toggle classes for dropdown
+menu
+
+let navButton = document.getElementsByClassName("nav-button");
+let toggle = false;
+let navList = document.getElementsByClassName("nav-list");
+const displayDropdown = () => {
+    navList[0].classList.toggle("nav-list-toggled");
+}
+navButton.addEventListener("click", displayDropdown, false)
+*/
+.nav-bar {
+  background-color: #FFF;
+  padding-bottom: 1rem;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+
+.nav-bar .nav-logo {
+  font-family: cursive;
+  color: #333;
+  text-align: center;
+  font-size: 2.37rem;
+}
+
+.nav-bar .nav-button {
+  height: 3px;
+  width: 32px;
+  border-radius: 10px;
+  background-color: #333;
+  display: block;
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  cursor: pointer;
+}
+
+.nav-bar .nav-button::after, .nav-bar .nav-button::before {
+  height: 3px;
+  width: 32px;
+  border-radius: 10px;
+  background-color: #333;
+  content: " ";
+  display: block;
+  margin: 7px 0;
+}
+
+.nav-bar .nav-button::before {
+  margin-top: 9px;
+}
+
+.nav-bar .nav-list {
+  margin-top: 10px;
+  display: none;
+  width: 100%;
+  background-color: #FFF;
+  z-index: 999;
+  padding-bottom: .33rem;
+}
+
+.nav-bar .nav-list .nav-item {
+  margin-right: 1rem;
+  list-style-type: none;
+  padding: 0;
+  text-indent: 1rem;
+}
+
+.nav-bar .nav-list .nav-item .nav-link {
+  font-family: sans-serif;
+  color: #333;
+  text-decoration: none;
+  text-transform: none;
+  font-size: 1.77rem;
+}
+
+.nav-bar .nav-list .nav-item .nav-link:hover {
+  opacity: .6;
+}
+
+.nav-bar .nav-list-toggled {
+  display: block;
+}
+/*# sourceMappingURL=main.css.map */

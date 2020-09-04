@@ -52,12 +52,12 @@
         display: inline-block;
         .nav-item {
             .nav-link {
-                transition: transform 400ms transform 200ms ease-in;
-                transform: scale(1,1.35);
+                transition: transform 400ms ease-in;
+                transform: scale(1,.3);
                 &:hover {
                 display: block;
-                transform: scale(1, 1.75) rotate(30deg);
-                    // transform-origin: top;
+                transform: scale(1.30, 1.15);
+                transform-origin: 20px 20px;
                 }
             }
             
