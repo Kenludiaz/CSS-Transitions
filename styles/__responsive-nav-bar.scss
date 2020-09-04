@@ -4,10 +4,9 @@ Requires javascript to toggle classes for dropdown
 menu
 
 let navButton = document.querySelector(".green .nav-button");
-let toggle = false;
-let navList = document.querySelector(".green .nav-list");
+let navList = document.querySelector(".green .nav-bar");
 const displayDropdown = () => {
-    navList.classList.toggle("nav-list-toggled");
+    navList.classList.toggle("nav-bar-toggled");
 }
 navButton.addEventListener("click", displayDropdown, false);
 */
@@ -36,74 +35,75 @@ $font-color: #333;
     border-radius: 10px;
     background-color: $burger-color;
 }
-
-.nav-logo {
-    @include logo-text();
-    text-align: center;
-    font-size: 2.37rem;
-}
-.nav-button {
-    @include nav-button;
-    display: block;
-    position: absolute;
-    left: 12px;
-    top: 15px;
-    border: none;
-    cursor: pointer;
-    &::after,
-    &::before {
+.header {
+    .nav-logo {
+        @include logo-text();
+        text-align: center;
+        font-size: 2.37rem;
+    }
+    .nav-button {
         @include nav-button;
-        content: " ";
         display: block;
-        margin: 7px 0;
+        position: absolute;
+        left: 12px;
+        top: 15px;
+        border: none;
+        cursor: pointer;
+        &::after,
+        &::before {
+            @include nav-button;
+            content: " ";
+            display: block;
+            margin: 7px 0;
+        }
+        &::before {
+            margin-top: 9px; 
+        }
     }
-    &::before {
-        margin-top: 9px; 
-    }
-}
-.nav-bar {
-    background-color: $nav-color;
-    padding-bottom: 1rem;
-    position: fixed;
-    width: 100%;
-    z-index: 999;
-    transform: scale(1,0);
-    transition: transform 300ms ease-in-out;
-    transform-origin: top left;
-    .nav-list {
-        margin-top: 10px;
-        width: 100%;
+    .nav-bar {
         background-color: $nav-color;
+        padding-bottom: 1rem;
+        position: fixed;
+        width: 100%;
         z-index: 999;
-        padding-bottom: .33rem;
-        // display: none;
-        .nav-item {
-            margin-right: 1rem;
-            list-style-type: none;
-            padding: 0;
-            text-indent: 1rem;
-            .nav-link {
-                @include nav-text();
-                text-decoration: none;
-                text-transform: none;
-                font-size: 1.77rem;
-                opacity: 0;
-                transition: opacity 50ms ease-in-out;
-                &:hover {
-                    opacity: .6;
+        transform: scale(1,0);
+        transition: transform 300ms ease-in-out;
+        transform-origin: top left;
+        .nav-list {
+            margin-top: 10px;
+            width: 100%;
+            background-color: $nav-color;
+            z-index: 999;
+            padding-bottom: .33rem;
+            // display: none;
+            .nav-item {
+                margin-right: 1rem;
+                list-style-type: none;
+                padding: 0;
+                text-indent: 1rem;
+                .nav-link {
+                    @include nav-text();
+                    text-decoration: none;
+                    text-transform: none;
+                    font-size: 1.77rem;
+                    opacity: 0;
+                    transition: opacity 50ms ease-in-out;
+                    &:hover {
+                        opacity: .6;
+                    }
+                
                 }
-            
             }
         }
     }
-}
-.nav-bar-toggled {
-    transform: scale(1,1);
-    .nav-list {
-        .nav-item {
-            .nav-link {
-                opacity: 1;
-                transition: opacity 200ms 200ms ease-in-out;
+    .nav-bar-toggled {
+        transform: scale(1,1);
+        .nav-list {
+            .nav-item {
+                .nav-link {
+                    opacity: 1;
+                    transition: opacity 200ms 200ms ease-in-out;
+                }
             }
         }
     }

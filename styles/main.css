@@ -104,4 +104,95 @@
 .blue {
   background-color: steelblue;
 }
+
+.blue .nav-logo {
+  font-family: cursive;
+  color: #333;
+  text-align: center;
+  font-size: 2.37rem;
+}
+
+.blue .nav-button {
+  height: 3px;
+  width: 32px;
+  border-radius: 10px;
+  background-color: #333;
+  display: block;
+  position: absolute;
+  left: 12px;
+  top: 75px;
+  border: none;
+  cursor: pointer;
+}
+
+.blue .nav-button::after, .blue .nav-button::before {
+  height: 3px;
+  width: 32px;
+  border-radius: 10px;
+  background-color: #333;
+  content: " ";
+  display: block;
+  margin: 7px 0;
+}
+
+.blue .nav-button::before {
+  margin-top: 9px;
+}
+
+.blue .nav-bar {
+  background-color: steelblue;
+  padding-bottom: 1rem;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  -webkit-transform: scale(1, 0);
+          transform: scale(1, 0);
+  -webkit-transition: -webkit-transform 300ms ease-in-out;
+  transition: -webkit-transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
+}
+
+.blue .nav-bar .nav-list {
+  margin-top: 10px;
+  width: 100%;
+  background-color: steelblue;
+  z-index: 999;
+  padding-bottom: .33rem;
+}
+
+.blue .nav-bar .nav-list .nav-item {
+  margin-right: 1rem;
+  list-style-type: none;
+  padding: 0;
+  text-indent: 1rem;
+}
+
+.blue .nav-bar .nav-list .nav-item .nav-link {
+  font-family: sans-serif;
+  color: #333;
+  text-decoration: none;
+  text-transform: none;
+  font-size: 1.77rem;
+  opacity: 0;
+  -webkit-transition: opacity 50ms ease-in-out;
+  transition: opacity 50ms ease-in-out;
+}
+
+.blue .nav-bar .nav-list .nav-item .nav-link:hover {
+  opacity: .6;
+}
+
+.blue .nav-bar-toggled {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+}
+
+.blue .nav-bar-toggled .nav-list .nav-item .nav-link {
+  opacity: 1;
+  -webkit-transition: opacity 200ms 200ms ease-in-out;
+  transition: opacity 200ms 200ms ease-in-out;
+}
 /*# sourceMappingURL=main.css.map */

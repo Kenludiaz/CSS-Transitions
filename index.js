@@ -30,12 +30,20 @@
 //     // this.classList.toggle
 // }
 
-
+// First
 let navButton = document.querySelector(".green .nav-button");
-let toggle = false;
 let navList = document.querySelector(".green .nav-bar");
 const displayDropdown = () => {
     navList.classList.toggle("nav-bar-toggled");
     // alert(this);
 }
 navButton.addEventListener("click", displayDropdown, false);
+
+// Second
+let navButton2 = document.querySelector(".blue  .nav-button");
+let navList2 = document.querySelector(".blue  .nav-bar");
+const displayDropdown2 = () => {
+    navList2.classList.toggle("nav-bar-toggled");
+    // alert(this);
+}
+navButton2.addEventListener("click", displayDropdown2, false);
