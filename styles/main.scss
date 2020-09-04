@@ -75,9 +75,9 @@ navButton.addEventListener("click", displayDropdown, false)
             background-color: $nav-color;
             z-index: 999;
             padding-bottom: .33rem;
-            transform: scale(1,0);
+            transform: scale(.75,0);
             transition: transform 800ms ease-in;
-            transform-origin: top;
+            transform-origin: top left;
             .nav-item {
                 margin-right: 1rem;
                 list-style-type: none;
@@ -89,7 +89,7 @@ navButton.addEventListener("click", displayDropdown, false)
                     text-transform: none;
                     font-size: 1.77rem;
                     opacity: 0;
-                    transition: opacity 1000ms 400ms ease-in-out;
+                    transition: opacity 1000ms 200ms ease-in-out;
                     &:hover {
                         opacity: .6;
                     }
@@ -103,7 +103,6 @@ navButton.addEventListener("click", displayDropdown, false)
             // transform-origin: top;
             .nav-item {
                 .nav-link {
-                    transition: opacity 200ms;
                     opacity: 1;
                 }
             }
