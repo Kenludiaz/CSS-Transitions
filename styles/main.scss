@@ -1,5 +1,5 @@
 $burger-color: #333;
-$nav-color: #FFF;
+$nav-color: rgb(125, 248, 125);
 $font-color: #333;
 * {
     padding: 0;
@@ -7,21 +7,9 @@ $font-color: #333;
     box-sizing: border-box;
 }
 .green {
-    /* DESCRIPTION:
-This is a hamburger nav bar
-Requires javascript to toggle classes for dropdown
-menu
-
-let navButton = document.querySelector(".nav-button");
-let toggle = false;
-let navList = document.getElementsByClassName("nav-list");
-const displayDropdown = () => {
-    navList[0].classList.toggle("nav-list-toggled");
-
-navButton.addEventListener("click", displayDropdown, false)
-*/
-
-
+    //This navbar animates the whole list
+    background-color: $nav-color;
+    padding-bottom: 1rem;
     @mixin logo-text {
         font-family: cursive;
         color: $font-color;
@@ -38,46 +26,47 @@ navButton.addEventListener("click", displayDropdown, false)
         border-radius: 10px;
         background-color: $burger-color;
     }
-
+    
+    .nav-logo {
+        @include logo-text();
+        text-align: center;
+        font-size: 2.37rem;
+    }
+    .nav-button {
+        @include nav-button;
+        display: block;
+        position: absolute;
+        left: 12px;
+        top: 15px;
+        border: none;
+        cursor: pointer;
+        &::after,
+        &::before {
+            @include nav-button;
+            content: " ";
+            display: block;
+            margin: 7px 0;
+        }
+        &::before {
+            margin-top: 9px; 
+        }
+    }
     .nav-bar {
         background-color: $nav-color;
         padding-bottom: 1rem;
         position: fixed;
         width: 100%;
         z-index: 999;
-        .nav-logo {
-            @include logo-text();
-            text-align: center;
-            font-size: 2.37rem;
-        }
-        .nav-button {
-            @include nav-button;
-            display: block;
-            position: absolute;
-            left: 12px;
-            top: 15px;
-            border: none;
-            cursor: pointer;
-            &::after,
-            &::before {
-                @include nav-button;
-                content: " ";
-                display: block;
-                margin: 7px 0;
-            }
-            &::before {
-                margin-top: 9px; 
-            }
-        }
+        transform: scale(1,0);
+        transition: transform 300ms ease-in-out;
+        transform-origin: top left;
         .nav-list {
             margin-top: 10px;
             width: 100%;
             background-color: $nav-color;
             z-index: 999;
             padding-bottom: .33rem;
-            transform: scale(.75,0);
-            transition: transform 200ms ease-in;
-            transform-origin: top left;
+            // display: none;
             .nav-item {
                 margin-right: 1rem;
                 list-style-type: none;
@@ -97,18 +86,16 @@ navButton.addEventListener("click", displayDropdown, false)
                 }
             }
         }
-        .nav-list-toggled {
-            transform: scale(1,1);
-            // transition: transform 400ms ease-in;
-            // transform-origin: top;
+    }
+    .nav-bar-toggled {
+        transform: scale(1,1);
+        .nav-list {
             .nav-item {
                 .nav-link {
                     opacity: 1;
                     transition: opacity 200ms 200ms ease-in-out;
                 }
             }
-            
         }
     }
-    background-color: green;
 }

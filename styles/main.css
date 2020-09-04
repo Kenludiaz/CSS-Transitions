@@ -6,38 +6,18 @@
 }
 
 .green {
-  /* DESCRIPTION:
-This is a hamburger nav bar
-Requires javascript to toggle classes for dropdown
-menu
-
-let navButton = document.querySelector(".nav-button");
-let toggle = false;
-let navList = document.getElementsByClassName("nav-list");
-const displayDropdown = () => {
-    navList[0].classList.toggle("nav-list-toggled");
-
-navButton.addEventListener("click", displayDropdown, false)
-*/
-  background-color: green;
-}
-
-.green .nav-bar {
-  background-color: #FFF;
+  background-color: #7df87d;
   padding-bottom: 1rem;
-  position: fixed;
-  width: 100%;
-  z-index: 999;
 }
 
-.green .nav-bar .nav-logo {
+.green .nav-logo {
   font-family: cursive;
   color: #333;
   text-align: center;
   font-size: 2.37rem;
 }
 
-.green .nav-bar .nav-button {
+.green .nav-button {
   height: 3px;
   width: 32px;
   border-radius: 10px;
@@ -50,7 +30,7 @@ navButton.addEventListener("click", displayDropdown, false)
   cursor: pointer;
 }
 
-.green .nav-bar .nav-button::after, .green .nav-bar .nav-button::before {
+.green .nav-button::after, .green .nav-button::before {
   height: 3px;
   width: 32px;
   border-radius: 10px;
@@ -60,24 +40,32 @@ navButton.addEventListener("click", displayDropdown, false)
   margin: 7px 0;
 }
 
-.green .nav-bar .nav-button::before {
+.green .nav-button::before {
   margin-top: 9px;
+}
+
+.green .nav-bar {
+  background-color: #7df87d;
+  padding-bottom: 1rem;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  -webkit-transform: scale(1, 0);
+          transform: scale(1, 0);
+  -webkit-transition: -webkit-transform 300ms ease-in-out;
+  transition: -webkit-transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+  -webkit-transform-origin: top left;
+          transform-origin: top left;
 }
 
 .green .nav-bar .nav-list {
   margin-top: 10px;
   width: 100%;
-  background-color: #FFF;
+  background-color: #7df87d;
   z-index: 999;
   padding-bottom: .33rem;
-  -webkit-transform: scale(0.75, 0);
-          transform: scale(0.75, 0);
-  -webkit-transition: -webkit-transform 200ms ease-in;
-  transition: -webkit-transform 200ms ease-in;
-  transition: transform 200ms ease-in;
-  transition: transform 200ms ease-in, -webkit-transform 200ms ease-in;
-  -webkit-transform-origin: top left;
-          transform-origin: top left;
 }
 
 .green .nav-bar .nav-list .nav-item {
@@ -102,12 +90,12 @@ navButton.addEventListener("click", displayDropdown, false)
   opacity: .6;
 }
 
-.green .nav-bar .nav-list-toggled {
+.green .nav-bar-toggled {
   -webkit-transform: scale(1, 1);
           transform: scale(1, 1);
 }
 
-.green .nav-bar .nav-list-toggled .nav-item .nav-link {
+.green .nav-bar-toggled .nav-list .nav-item .nav-link {
   opacity: 1;
   -webkit-transition: opacity 200ms 200ms ease-in-out;
   transition: opacity 200ms 200ms ease-in-out;

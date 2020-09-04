@@ -33,9 +33,9 @@
 
 let navButton = document.querySelector(".green .nav-button");
 let toggle = false;
-let navList = document.querySelector(".green .nav-list");
+let navList = document.querySelector(".green .nav-bar");
 const displayDropdown = () => {
-    navList.classList.toggle("nav-list-toggled");
+    navList.classList.toggle("nav-bar-toggled");
     // alert(this);
 }
 navButton.addEventListener("click", displayDropdown, false);
