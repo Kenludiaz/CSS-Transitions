@@ -3,17 +3,22 @@ This is a hamburger nav bar
 Requires javascript to toggle classes for dropdown
 menu
 
-let navButton = document.getElementsByClassName("nav-button");
+let navButton = document.querySelector(".green .nav-button");
 let toggle = false;
-let navList = document.getElementsByClassName("nav-list");
+let navList = document.querySelector(".green .nav-list");
 const displayDropdown = () => {
-    navList[0].classList.toggle("nav-list-toggled");
+    navList.classList.toggle("nav-list-toggled");
 }
-navButton.addEventListener("click", displayDropdown, false)
+navButton.addEventListener("click", displayDropdown, false);
 */
 $burger-color: #333;
 $nav-color: #FFF;
 $font-color: #333;
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
 
 @mixin logo-text {
     font-family: cursive;
@@ -47,8 +52,9 @@ $font-color: #333;
         @include nav-button;
         display: block;
         position: absolute;
-        left: 10px;
+        left: 12px;
         top: 15px;
+        border: none;
         background-color: $burger-color;
         cursor: pointer;
         &::after,

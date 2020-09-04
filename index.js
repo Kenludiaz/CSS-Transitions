@@ -30,3 +30,12 @@
 //     // this.classList.toggle
 // }
 
+
+let navButton = document.querySelector(".green .nav-button");
+let toggle = false;
+let navList = document.querySelector(".green .nav-list");
+const displayDropdown = () => {
+    navList.classList.toggle("nav-list-toggled");
+    // alert(this);
+}
+navButton.addEventListener("click", displayDropdown, false);

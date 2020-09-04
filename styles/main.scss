@@ -1,2 +1,114 @@
+$burger-color: #333;
+$nav-color: #FFF;
+$font-color: #333;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.green {
+    /* DESCRIPTION:
+This is a hamburger nav bar
+Requires javascript to toggle classes for dropdown
+menu
 
-@import 'responsive-nav-bar';
+let navButton = document.querySelector(".nav-button");
+let toggle = false;
+let navList = document.getElementsByClassName("nav-list");
+const displayDropdown = () => {
+    navList[0].classList.toggle("nav-list-toggled");
+
+navButton.addEventListener("click", displayDropdown, false)
+*/
+
+
+    @mixin logo-text {
+        font-family: cursive;
+        color: $font-color;
+    }
+
+    @mixin nav-text {
+        font-family: sans-serif;
+        color: $font-color;
+    }
+
+    @mixin nav-button {
+        height: 3px;
+        width: 32px;
+        border-radius: 10px;
+        background-color: $burger-color;
+    }
+
+    .nav-bar {
+        background-color: $nav-color;
+        padding-bottom: 1rem;
+        position: fixed;
+        width: 100%;
+        z-index: 999;
+        .nav-logo {
+            @include logo-text();
+            text-align: center;
+            font-size: 2.37rem;
+        }
+        .nav-button {
+            @include nav-button;
+            display: block;
+            position: absolute;
+            left: 12px;
+            top: 15px;
+            border: none;
+            cursor: pointer;
+            &::after,
+            &::before {
+                @include nav-button;
+                content: " ";
+                display: block;
+                margin: 7px 0;
+            }
+            &::before {
+                margin-top: 9px; 
+            }
+        }
+        .nav-list {
+            margin-top: 10px;
+            width: 100%;
+            background-color: $nav-color;
+            z-index: 999;
+            padding-bottom: .33rem;
+            transform: scale(1,0);
+            transition: transform 800ms ease-in;
+            transform-origin: top;
+            .nav-item {
+                margin-right: 1rem;
+                list-style-type: none;
+                padding: 0;
+                text-indent: 1rem;
+                .nav-link {
+                    @include nav-text();
+                    text-decoration: none;
+                    text-transform: none;
+                    font-size: 1.77rem;
+                    opacity: 0;
+                    transition: opacity 1000ms 400ms ease-in-out;
+                    &:hover {
+                        opacity: .6;
+                    }
+                
+                }
+            }
+        }
+        .nav-list-toggled {
+            transform: scale(1,1);
+            // transition: transform 400ms ease-in;
+            // transform-origin: top;
+            .nav-item {
+                .nav-link {
+                    transition: opacity 200ms;
+                    opacity: 1;
+                }
+            }
+            
+        }
+    }
+    background-color: green;
+}
