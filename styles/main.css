@@ -72,10 +72,10 @@ navButton.addEventListener("click", displayDropdown, false)
   padding-bottom: .33rem;
   -webkit-transform: scale(0.75, 0);
           transform: scale(0.75, 0);
-  -webkit-transition: -webkit-transform 800ms ease-in;
-  transition: -webkit-transform 800ms ease-in;
-  transition: transform 800ms ease-in;
-  transition: transform 800ms ease-in, -webkit-transform 800ms ease-in;
+  -webkit-transition: -webkit-transform 200ms ease-in;
+  transition: -webkit-transform 200ms ease-in;
+  transition: transform 200ms ease-in;
+  transition: transform 200ms ease-in, -webkit-transform 200ms ease-in;
   -webkit-transform-origin: top left;
           transform-origin: top left;
 }
@@ -94,8 +94,8 @@ navButton.addEventListener("click", displayDropdown, false)
   text-transform: none;
   font-size: 1.77rem;
   opacity: 0;
-  -webkit-transition: opacity 1000ms 200ms ease-in-out;
-  transition: opacity 1000ms 200ms ease-in-out;
+  -webkit-transition: opacity 50ms ease-in-out;
+  transition: opacity 50ms ease-in-out;
 }
 
 .green .nav-bar .nav-list .nav-item .nav-link:hover {
@@ -109,5 +109,7 @@ navButton.addEventListener("click", displayDropdown, false)
 
 .green .nav-bar .nav-list-toggled .nav-item .nav-link {
   opacity: 1;
+  -webkit-transition: opacity 200ms 200ms ease-in-out;
+  transition: opacity 200ms 200ms ease-in-out;
 }
 /*# sourceMappingURL=main.css.map */
